@@ -20,13 +20,14 @@ export default function Home() {
           <PatientForm />
 
           <div className="text-sm mt-20 flex justify-between">
-            <p className="justify-items-end text-dark-600 xl:text-left">© 2024 Patient</p>
+            <p className="justify-items-end text-dark-600 xl:text-left">
+              © 2024 Patient
+            </p>
+            <Link href={"/?admin=true"} className="text-green-500">
+              Admin
+            </Link>
           </div>
-
-          <Link href={'/?admin=true'} >
-
-          </Link>
-
+          
         </div>
       </section>
     </div>
