@@ -15,6 +15,9 @@
         *npm install next-themes
         *create ThemProvider component code from shadcn dark-mode
         *wrap app layout.tsx children by ThemProvider
+        *crate ModeToggle component
+
+    Images
 
 
 
