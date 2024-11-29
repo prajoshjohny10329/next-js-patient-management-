@@ -17,7 +17,11 @@
         *wrap app layout.tsx children by ThemProvider
         *crate ModeToggle component
 
-    Images
+    Add assets images
+
+    Home Page
+        *add logo
+        *create from page
 
 
 
