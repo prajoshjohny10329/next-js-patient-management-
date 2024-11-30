@@ -27,7 +27,7 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const RenderField = () =>{
+const RenderField = ({ field, props } : { field:any; props:CustomProps }) =>{
     return(
         <Input 
             placeholder="John De"
