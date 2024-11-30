@@ -15,7 +15,7 @@ import { FormFieldType } from "../PatientForm";
 interface CustomProps {
   control: Control<any>;
   fieldType: FormFieldType;
-  name: string;
+  name?: string;
   label?: string;
   placeholder?: string;
   iconSrc?: string;
@@ -27,7 +27,17 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const CustomFormFiled = ({ control, fieldType, name, label }: CustomProps) => {
+const RenderField = () =>{
+    return(
+        <Input 
+            placeholder="John De"
+            type="text"
+        />
+    )
+}
+
+const CustomFormFiled = ( props: CustomProps) => {
+    const {control, fieldType, name, label }  = props
   return (
     <FormField
       control={control}
@@ -37,11 +47,7 @@ const CustomFormFiled = ({ control, fieldType, name, label }: CustomProps) => {
           {fieldType !== FormFieldType.CHECKBOX && label && (
             <FormLabel>{name}</FormLabel>
           )}
-          <FormControl>
-            <Input placeholder="shadcn" {...field} />
-          </FormControl>
-          <FormDescription>This is your public display name.</FormDescription>
-          <FormMessage />
+          <RenderField field={field} props={props} />
         </FormItem>
       )}
     />
