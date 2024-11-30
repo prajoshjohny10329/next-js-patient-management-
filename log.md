@@ -24,7 +24,7 @@
         *create from page
     26:10 before patient form 22:09:17  to 00:00:00
 
-    30-11-2024  22.45
+30-11-2024  
 
     Patient Form
         *npx shadcn@latest add form
@@ -40,6 +40,10 @@
         *create switch case for choose inputs by field type
         *npm i react-phone-number-input
         *react-phone-number-input for country code for phone inputs
+        *npm install libphonenumber-js
+        *libphonenumber-js for E164number
+    22.45 to 1:28    
+ 
         
 
 
