@@ -14,6 +14,11 @@ const formSchema = z.object({
   }),
 });
 
+export enum FormFieldType {
+  INPUT =  'input',
+
+}
+
 export const PatientForm = () => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -25,9 +30,8 @@ export const PatientForm = () => {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values);
+
   }
   return (
     <Form {...form}>
@@ -36,7 +40,11 @@ export const PatientForm = () => {
           <h1 className="header text-white">Hi there 👋</h1>
           <p className="text-dark-700">Get started with appointments.</p>
         </section>
-        <CustomFormFiled control={form.control} />
+        <CustomFormFiled 
+            control={form.control}
+            fieldType = {FormFieldType.INPUT}
+
+        />
         <Button type="submit">Submit</Button>
       </form>
     </Form>
