@@ -14,17 +14,27 @@ import { FormFieldType } from "../PatientForm";
 
 interface CustomProps{
     control: Control<any>,
-    fieldType: FormFieldType
+    fieldType: FormFieldType,
+    name: string;
+    label?: string;
+    placeholder?: string;
+    iconSrc?: string;
+    iconAlt?: string;
+    disabled?: boolean;
+    dateFormat?: string;
+    showTimeSelect?: boolean;
+    children?: React.ReactNode;
+    renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const CustomFormFiled = ( { control, fieldType }: CustomProps) => {
+const CustomFormFiled = ( { control, fieldType, name, label }: CustomProps) => {
   return (
     <FormField
       control={ control }
       name="username"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Username</FormLabel>
+          <FormLabel>{ name }</FormLabel>
           <FormControl>
             <Input placeholder="shadcn" {...field} />
           </FormControl>
