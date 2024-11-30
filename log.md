@@ -29,9 +29,9 @@
     Patient Form
         *npx shadcn@latest add form
         *Add form schema
-        *CustomFormFiled for handling reuseable form inputs
+        *CustomFormField for handling reuseable form inputs
 
-    CustomFormFiled
+    CustomFormField
         *CustomProps for interface inputs
         *check is check-box for avoiding label
         *
