@@ -12,8 +12,9 @@ import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form"; // Ensure this is the correct import
 import { FormFieldType } from "../PatientForm";
 import Image from "next/image";
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import { useState } from "react";
 
 interface CustomProps {
   control: Control<any>;
@@ -47,18 +48,29 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             />
           )}
           <FormControl>
-            <Input 
-                placeholder={placeholder} 
-                {...field}
-                className="shad-input border-0 text-white"
-                />
+            <Input
+              placeholder={placeholder}
+              {...field}
+              className="shad-input border-0 text-white"
+            />
           </FormControl>
         </div>
       );
     case FormFieldType.PHONE_INPUT:
-      return(
-        <PhoneInput/>
-      )
+      return (
+        <FormControl>
+          <PhoneInput
+            defaultCountry="US"
+            placeholder={placeholder}
+            international
+            withCountryCallingCode
+            value={field.value as E164Number | undefined}
+            onChange={field.onChange}
+            className="input-phone text-white"
+          />
+        </FormControl>
+      );
+
     default:
       break;
   }
