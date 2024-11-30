@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form"; // Ensure this is the correct import
 import { FormFieldType } from "../PatientForm";
 import Image from "next/image";
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 interface CustomProps {
   control: Control<any>;
@@ -53,6 +55,10 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           </FormControl>
         </div>
       );
+    case FormFieldType.PHONE_INPUT:
+      return(
+        <PhoneInput/>
+      )
     default:
       break;
   }
