@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form"; // Ensure this is the correct import
 import { FormFieldType } from "../PatientForm";
+import Image from "next/image";
 
 interface CustomProps {
   control: Control<any>;
@@ -28,6 +29,29 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props } : { field:any; props:CustomProps }) =>{
+    const { fieldType, iconSrc, iconAlt, placeholder   }  = props
+
+
+    switch (fieldType) {
+        case FormFieldType.INPUT:
+            return(
+                <div className="flex round-md border border-dark-500 bg-dark-400 ">
+                    {iconSrc && (
+                        <Image 
+                            src={iconSrc}
+                            height={24}
+                            width={24}
+                            alt={iconAlt || 'Icon'}
+                            className="ml-2"
+                        />
+                    )} 
+                </div>
+            )
+            break;
+    
+        default:
+            break;
+    }
     return(
         <Input 
             placeholder="John De"
@@ -45,9 +69,10 @@ const CustomFormFiled = ( props: CustomProps) => {
       render={({ field }) => (
         <FormItem>
           {fieldType !== FormFieldType.CHECKBOX && label && (
-            <FormLabel>{name}</FormLabel>
+            <FormLabel>{label}</FormLabel>
           )}
           <RenderField field={field} props={props} />
+          <FormMessage className="shad-error" />
         </FormItem>
       )}
     />
