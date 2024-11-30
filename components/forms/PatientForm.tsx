@@ -15,7 +15,13 @@ const formSchema = z.object({
 });
 
 export enum FormFieldType {
-  INPUT =  'input',
+  INPUT = "input",
+  TEXTAREA = "textarea",
+  PHONE_INPUT = "phoneInput",
+  CHECKBOX = "checkbox",
+  DATE_PICKER = "datePicker",
+  SELECT = "select",
+  SKELETON = "skeleton",
 
 }
 
