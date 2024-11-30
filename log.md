@@ -34,7 +34,12 @@
     CustomFormField
         *CustomProps for interface inputs
         *check is check-box for avoiding label
-        *
+        *RenderField for  dynamic input fields by render
+
+    RenderField
+        *create switch case for choose inputs by field type
+        *npm i react-phone-number-input
+        *react-phone-number-input for country code for phone inputs
         
 
 
