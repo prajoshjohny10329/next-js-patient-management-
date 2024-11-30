@@ -22,6 +22,14 @@
     Home Page
         *add logo
         *create from page
+    26:10 before patient form 22:09:17  to 00:00:00
+
+    30-11-2024  22.45
+
+    Patient Form
+        *npx shadcn@latest add form
+        *Add form schema
+        *
 
 
 
