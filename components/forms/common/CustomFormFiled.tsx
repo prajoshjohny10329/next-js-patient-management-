@@ -28,40 +28,38 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const RenderField = ({ field, props } : { field:any; props:CustomProps }) =>{
-    const { fieldType, iconSrc, iconAlt, placeholder   }  = props
+const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
+  const { fieldType, iconSrc, iconAlt, placeholder } = props;
 
+  switch (fieldType) {
+    case FormFieldType.INPUT:
+      return (
+        <div className="flex round-md border border-dark-500 bg-dark-400 ">
+          {iconSrc && (
+            <Image
+              src={iconSrc}
+              height={24}
+              width={24}
+              alt={iconAlt || "Icon"}
+              className="ml-2"
+            />
+          )}
+          <FormControl>
+            <Input 
+                placeholder={placeholder} 
+                {...field}
+                className="shad-input border-0 text-white"
+                />
+          </FormControl>
+        </div>
+      );
+    default:
+      break;
+  }
+};
 
-    switch (fieldType) {
-        case FormFieldType.INPUT:
-            return(
-                <div className="flex round-md border border-dark-500 bg-dark-400 ">
-                    {iconSrc && (
-                        <Image 
-                            src={iconSrc}
-                            height={24}
-                            width={24}
-                            alt={iconAlt || 'Icon'}
-                            className="ml-2"
-                        />
-                    )} 
-                </div>
-            )
-            break;
-    
-        default:
-            break;
-    }
-    return(
-        <Input 
-            placeholder="John De"
-            type="text"
-        />
-    )
-}
-
-const CustomFormFiled = ( props: CustomProps) => {
-    const {control, fieldType, name, label }  = props
+const CustomFormFiled = (props: CustomProps) => {
+  const { control, fieldType, name, label } = props;
   return (
     <FormField
       control={control}

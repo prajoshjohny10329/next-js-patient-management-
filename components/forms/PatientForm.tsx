@@ -48,8 +48,13 @@ export const PatientForm = () => {
           <p className="text-dark-700">Get started with appointments.</p>
         </section>
         <CustomFormFiled 
+            fieldType={FormFieldType.INPUT}
             control={form.control}
-            fieldType = {FormFieldType.INPUT}
+            name="name"
+            label="Full name"
+            placeholder="John Doe"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="user"
 
         />
         <Button type="submit">Submit</Button>
