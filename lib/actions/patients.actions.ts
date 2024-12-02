@@ -3,8 +3,11 @@ import { users } from "../appwrite.config";
 
 // user from patient form 
 export const createUser = async (user: CreateUserParams) => {
+  console.log('create user function');
+  console.log(users);
+  
+
     try {
-      // Create new user -> https://appwrite.io/docs/references/1.5.x/server-nodejs/users#create
       const newUser = await users.create(
         ID.unique(),
         user.email,

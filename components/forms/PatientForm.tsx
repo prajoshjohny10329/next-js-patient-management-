@@ -25,26 +25,28 @@ export enum FormFieldType {
 
 export const PatientForm = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
+
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      name: "",
-      email:"",
-      phone:""
+      name: "Prajosh",
+      email:"prajosh@gmail.com",
+      phone:"+929207054232"
     },
   });
 
   // 2. Define a submit handler.
   async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
-    console.log('hi');
-    
-    const router = useRouter()
     setIsLoading(true);
     try {
-      // const userData = { name, email, phone }
-      // const user = createUser(userData)
+      const userData = { name, email, phone }
+      const user  = await createUser(userData)
+      console.log(user);
+      console.log('onsubmit after created user');
+      
       // if(user) router.push('/patient/${usr.id}/register')
     } catch (error) {
       
@@ -89,7 +91,7 @@ export const PatientForm = () => {
 
       <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
         
-        {/* <Button type="submit">Submit</Button> */}
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

@@ -1,0 +1,1 @@
+don't call hooks in child function

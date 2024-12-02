@@ -10,7 +10,12 @@ export const {
     DOCTOR_COLLECTION_ID,
     APPOINTMENT_COLLECTION_ID,
     NEXT_PUBLIC_BUCKET_ID: BUCKET_ID,
-  } = process.env;         
+  } = process.env;       
+
+  console.log('NEXT_PUBLIC_ENDPOINT:', process.env.DATABASE_ID);
+  console.log('NEXT_PUBLIC_ENDPOINT:', process.env.PATIENT_COLLECTION_ID);
+
+
 
   const client = new sdk.Client()
 
