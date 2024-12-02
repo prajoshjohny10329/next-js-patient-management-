@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import CustomFormField from "./common/CustomFormField";
+import CustomFormField from "./CustomFormField";
 
 const formSchema = z.object({
   username: z.string().min(2, {
