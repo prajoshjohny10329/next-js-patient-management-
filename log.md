@@ -50,8 +50,20 @@
         *add submit button with loading $SubmitButton
         *validation form 
             *add new from schema for patient form    $UserFormValidation
-            *
- 
+            *know about zod for form validation
+            *add default value for onSubmit function
+    
+    Backend
+        *create app-write and a project
+        *create api server
+        *create database and collection: patient, doctors, appointment
+        *create storage bucket
+        *add appwrite.config.ts in lib and setup with
+        *create patient require fields like name phone in appwrite patient database
+        *allow permission to all database for CRUD operation
+        *create patients.action.ts  in lib/action for ex:createUser...
+        *create types folder and its files
+        *connect createUser from patients.action.ts to createUser patientForm
         
 
 
