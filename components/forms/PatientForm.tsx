@@ -41,9 +41,9 @@ export const PatientForm = () => {
     const router = useRouter()
     setIsLoading(true);
     try {
-      const userData = { name, email, phone }
-      const user = createUser(userData)
-      if(user) router.push('/patient/${usr.id}/register')
+      // const userData = { name, email, phone }
+      // const user = createUser(userData)
+      // if(user) router.push('/patient/${usr.id}/register')
     } catch (error) {
       
     }

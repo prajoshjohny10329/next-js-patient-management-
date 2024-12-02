@@ -83,7 +83,7 @@ const CustomFormField = (props: CustomProps) => {
   return (
     <FormField
       control={control}
-      name="username"
+      name={name}
       render={({ field }) => (
         <FormItem>
           {fieldType !== FormFieldType.CHECKBOX && label && (
