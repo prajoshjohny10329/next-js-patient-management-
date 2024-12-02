@@ -38,6 +38,8 @@ export const PatientForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
+    console.log('hi');
+    
     const router = useRouter()
     setIsLoading(true);
     try {
@@ -87,7 +89,7 @@ export const PatientForm = () => {
 
       <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
         
-        <Button type="submit">Submit</Button>
+        {/* <Button type="submit">Submit</Button> */}
       </form>
     </Form>
   );
