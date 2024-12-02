@@ -42,7 +42,15 @@
         *react-phone-number-input for country code for phone inputs
         *npm install libphonenumber-js
         *libphonenumber-js for E164number
-    50:31 before form submit     22.45 to 1:28    
+    50:31 before form submit     22.45 to 1:28
+
+03-12-204   12:50
+
+    Add SubmitButton
+        *add submit button with loading $SubmitButton
+        *validation form 
+            *add new from schema for patient form    $UserFormValidation
+            *
  
         
 
