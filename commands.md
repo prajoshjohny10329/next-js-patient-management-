@@ -12,3 +12,5 @@ Peer dependency conflicts only	                    Use --legacy-peer-deps
 Critical installation and conflicts persist	        Use --force (last resort)
 Safe package resolution while ignoring conflicts	Use --legacy-peer-deps
 Absolutely need the package, no matter the risks	Use --force
+
+cross origin  problem

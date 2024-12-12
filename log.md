@@ -44,8 +44,7 @@
         *libphonenumber-js for E164number
     50:31 before form submit     22.45 to 1:28
 
-03-12-204   12:50
-
+03-12-204
     Add SubmitButton
         *add submit button with loading $SubmitButton
         *validation form 
@@ -64,7 +63,17 @@
         *create patients.action.ts  in lib/action for ex:createUser...
         *create types folder and its files
         *connect createUser from patients.action.ts to createUser patientForm
-    4:20    with the env issue
+       
+    01:20:00    before form submit   12:50 am to  4:20 am
+    with the env issue
+
+13-12-2024  00:25
+
+    backend
+        *create api for first user
+
+    
+    
         
 
 
