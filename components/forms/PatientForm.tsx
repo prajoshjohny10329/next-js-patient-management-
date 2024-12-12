@@ -43,9 +43,7 @@ export const PatientForm = () => {
     setIsLoading(true);
     try {
       const userData = { name, email, phone }
-      const user  = await createUser(userData)
-      console.log(user);
-      console.log('onsubmit after created user');
+      const user  = await fetch(process.env.NEXT_PUBLIC_API+"user")
       
       // if(user) router.push('/patient/${usr.id}/register')
     } catch (error) {
