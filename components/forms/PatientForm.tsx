@@ -43,8 +43,13 @@ export const PatientForm = () => {
     setIsLoading(true);
     try {
       const userData = { name, email, phone }
-      const user  = await fetch(process.env.NEXT_PUBLIC_API+"user")
-      
+      const response = await fetch(process.env.NEXT_PUBLIC_API+"user", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });      
       // if(user) router.push('/patient/${usr.id}/register')
     } catch (error) {
       

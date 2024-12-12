@@ -1,11 +1,22 @@
-import { model } from "mongoose"
+import { model, models } from "mongoose"
 import { Schema } from "mongoose"
 
+export const userSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
 
-const userSchema = new Schema({
-    name: String,
-    email: String,
-    phone: String,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+        unique: true,
+    },
 })
 
-export const UserModel = model('user',userSchema)
+export const User = models.User || model('User', userSchema)
