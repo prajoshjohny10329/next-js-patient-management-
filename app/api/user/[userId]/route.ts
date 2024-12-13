@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
     // } catch (error) {
     //     return Response.json({ success: false, message: 'Not Found' });
     // }
+        return Response.json({ success: false, message: 'Dynamic Rout' });
 }
 
 export async function POST(req: NextRequest) {

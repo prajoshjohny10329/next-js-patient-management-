@@ -3,6 +3,8 @@ import { connectDB } from "@/utils/connectDB";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
+    console.log('normal route');
+    
     try {
         const userData = await User.find({})
         return Response.json({ success: true, userData })
@@ -12,6 +14,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+    console.log('normal route');
 
     try {
         const { name, email, phone } = await req.json();
