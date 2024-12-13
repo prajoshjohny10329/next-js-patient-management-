@@ -7,10 +7,14 @@ const Registration = async ({params}: SearchParamProps) => {
   
   const {userId} = await params
   
-  const response = await fetch(process.env.NEXT_PUBLIC_API+"user/"+userId)
-  console.log('after');
-  
-  console.log(await response.json());
+  const response = await fetch(process.env.NEXT_PUBLIC_API+"user/"+userId).then(async (response)=>{
+    return await response.json()
+  })
+
+  const { user , success } = response
+
+  console.log(user);
+  console.log(success);
   
   
   return (
@@ -25,7 +29,7 @@ const Registration = async ({params}: SearchParamProps) => {
             className="mb-2 h-10 w-fit"
           />
 
-          <RegisterForm />
+          <RegisterForm user={user} />
 
           <div className="text-sm flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">

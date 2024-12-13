@@ -23,7 +23,7 @@ export enum FormFieldType {
   SKELETON = "skeleton",
 }
 
-export const RegisterForm = () => {
+export const RegisterForm = ({user}:{user:User}) => {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 

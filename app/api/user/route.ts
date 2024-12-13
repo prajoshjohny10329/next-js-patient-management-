@@ -6,6 +6,7 @@ export async function GET(req: NextRequest) {
     console.log('normal route');
     
     try {
+        await connectDB();
         const userData = await User.find({})
         return Response.json({ success: true, userData })
     } catch (error) {

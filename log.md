@@ -78,7 +78,8 @@
     Frontend
         *create patients Pages
         *create Register Form
-        *12713
+        *Get userdata from Dynamic user api
+        *
 
     
     
