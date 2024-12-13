@@ -40,24 +40,24 @@ export const RegisterForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
-    setIsLoading(true);
-    try {
-      const userData = { name, email, phone }
-      const response = await fetch(process.env.NEXT_PUBLIC_API+"user", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      });      
+    // setIsLoading(true);
+    // try {
+    //   const userData = { name, email, phone }
+    //   const response = await fetch(process.env.NEXT_PUBLIC_API+"user", {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(userData),
+    //   });      
 
-      const { user } = await response.json()
-      if(user) router.push('/patients/${usr.id}/register')
+    //   const { user } = await response.json()
+    //   if(user) router.push('/patients/${usr.id}/register')
       
-    } catch (error) {
-      console.log('error in user onSubmit' , error);
+    // } catch (error) {
+    //   console.log('error in user onSubmit' , error);
       
-    }
+    // }
   }
   return (
     <Form {...form}>

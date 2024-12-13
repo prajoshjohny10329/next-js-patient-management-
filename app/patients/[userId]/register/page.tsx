@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Registration = () => {
+const Registration = async () => {
+  // const response = await fetch(process.env.NEXT_PUBLIC_API+"user")
+  
   return (
     <div className="flex h-screen max-h-screen">
       <section className="scr container my-auto">
