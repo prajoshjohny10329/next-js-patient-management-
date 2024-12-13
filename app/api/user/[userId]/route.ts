@@ -2,38 +2,16 @@ import { User } from "@/models/usersModel";
 import { connectDB } from "@/utils/connectDB";
 import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest, { params } : SearchParamProps) {
+export async function GET(req: NextRequest, { params } : {params :{userId : string}}) {
     console.log("rout with user id");
-    const { userId } = await params;
-    console.log(await params);
-    console.log(userId);
-    
-    
-    // try {
-    //     const userData = await User.find({})
-    //     return Response.json({ success: true, userData })
-    // } catch (error) {
-    //     return Response.json({ success: false, message: 'Not Found' });
-    // }
-        return Response.json({ success: false, message: 'Dynamic Rout' });
-}
-
-export async function POST(req: NextRequest) {
-
     try {
-        const { name, email, phone } = await req.json();
-
-        await connectDB();
-
-        const user = await User.create({
-            name,
-            email,
-            phone,
-        });
-        return Response.json({  success: true, user })
+        const { userId } = params;
+        const user = await User.findOne({_id: userId})
+        if(!user){
+            return Response.json({ success: false, message: 'User Not Found' });
+        }
+        return Response.json({ success: true, user })
     } catch (error) {
-        console.log(error);
-        
-        return Response.json({ success: false, message: error });
+        return Response.json({ success: false, message: 'User Not Found' });
     }
 }
