@@ -52,7 +52,7 @@ export const PatientForm = () => {
       });      
 
       const { user } = await response.json()
-      if(user) router.push('/patient/${usr.id}/register')
+      if(user) router.push('/patients/${usr.id}/register')
       
     } catch (error) {
       console.log('error in user onSubmit' , error);
