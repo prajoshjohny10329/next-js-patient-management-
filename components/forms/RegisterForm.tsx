@@ -24,6 +24,10 @@ export enum FormFieldType {
 }
 
 export const RegisterForm = ({user}:{user:User}) => {
+  console.log("register form");
+  console.log(user);
+  
+  
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 

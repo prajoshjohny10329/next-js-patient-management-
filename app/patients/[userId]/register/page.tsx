@@ -7,15 +7,10 @@ const Registration = async ({params}: SearchParamProps) => {
   
   const {userId} = await params
   
-  const response = await fetch(process.env.NEXT_PUBLIC_API+"user/"+userId).then(async (response)=>{
+  const { user , success } = await fetch(process.env.NEXT_PUBLIC_API+"user/"+userId).then(async (response)=>{
     return await response.json()
   })
 
-  const { user , success } = response
-
-  console.log(user);
-  console.log(success);
-  
   
   return (
     <div className="flex h-screen max-h-screen">
