@@ -3,10 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Registration = async ({params :{ userId }}: SearchParamProps) => {
-  console.log(userId);
+const Registration = async ({params}: SearchParamProps) => {
   
-  const response = await fetch(process.env.NEXT_PUBLIC_API+"user")
+  const {userId} = await params
+  
+  const response = await fetch(process.env.NEXT_PUBLIC_API+"user/"+userId)
+  console.log('after');
+  
+  console.log(await response.json());
+  
   
   return (
     <div className="flex h-screen max-h-screen">

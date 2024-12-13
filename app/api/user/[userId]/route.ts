@@ -2,8 +2,12 @@ import { User } from "@/models/usersModel";
 import { connectDB } from "@/utils/connectDB";
 import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, { params } : SearchParamProps) {
     console.log("rout with user id");
+    const { userId } = await params;
+    console.log(await params);
+    console.log(userId);
+    
     
     // try {
     //     const userData = await User.find({})
