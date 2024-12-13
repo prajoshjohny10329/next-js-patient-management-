@@ -64,22 +64,26 @@
         *create types folder and its files
         *connect createUser from patients.action.ts to createUser patientForm
        
-    01:20:00    before form submit   12:50 am to  4:20 am
+    01:20:00    before form submit   00:50 am to  4:20 am
     with the env issue
 
-13-12-2024  00:25
+13-12-2024  
 
-    backend
+    Appwrite Error
+        *appwrite Error & create data in MONGODB 
         *create api for first user
     
-    02:41
+    00:25 am to 02:41 am
 
-13-12-2024  23:49
-    Frontend
-        *create patients Pages
+14-12-2024  
+
+    Create patients Register Page
+        *create Register Page
         *create Register Form
         *Get userdata from Dynamic user api
-        *
+        *User data Pass to Register form from Register page
+
+    01:27:54    before add actual form field     00:00am to 01:37 am   
 
     
     
