@@ -89,7 +89,8 @@
 
     Create Register form
         *Patient information
-         npx shadcn@latest add radio-group
+        *npx shadcn@latest add radio-group
+        *add gender option constant file  /constant/index.ts
 
     
     

@@ -12,7 +12,9 @@ import { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
-import { RadioGroup } from "../ui/radio-group";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { GenderOptions } from "@/constants";
+import { Label } from "../ui/label";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -118,28 +120,36 @@ export const RegisterForm = ({ user }: { user: User }) => {
             label="Date of birth"
           />
 
-        <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.SKELETON}
             control={form.control}
             name="gender"
             label="Gender"
-            renderSkeleton={(field)=>(
+            renderSkeleton={(field) => (
               <FormControl>
-                <RadioGroup className="flex h-11 gap-4 xl:justify-between"
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-                
+                <RadioGroup
+                  className="flex h-11 gap-4 xl:justify-between"
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
                 >
-                
+                  {
+                    GenderOptions.map((option)=>(
+                      <div key={option} className="radio-group">
+                        <RadioGroupItem value={option} id={option}>
+                          <Label htmlFor={option} className="cursor-pointer">
+                            {option}
+                          </Label>
 
-                  
+                        </RadioGroupItem>
+
+
+                      </div>
+                    ))
+                  }
                 </RadioGroup>
-
               </FormControl>
             )}
           />
-
-          
         </div>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
