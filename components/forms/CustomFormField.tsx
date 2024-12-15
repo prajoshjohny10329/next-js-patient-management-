@@ -72,6 +72,21 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           />
         </FormControl>
       );
+    case FormFieldType.DATE_PICKER:
+      return(
+        <div className="flex rounded border bg-dark-500 border-dark-400">
+          <Image
+              src='/assets/icons/calendar.svg'
+              height={24}
+              width={24}
+              alt="Calender"
+              className="ml-2"
+            />
+          <FormControl>
+          
+          </FormControl>
+        </div>
+      )
 
     default:
       break;

@@ -139,10 +139,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
                           <Label htmlFor={option} className="cursor-pointer">
                             {option}
                           </Label>
-
                         </RadioGroupItem>
-
-
                       </div>
                     ))
                   }

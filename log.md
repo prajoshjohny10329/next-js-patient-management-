@@ -91,6 +91,7 @@
         *Patient information
         *npx shadcn@latest add radio-group
         *add gender option constant file  /constant/index.ts
+        *Add new switch case for DATE_PICKER and SKELTON 
 
     
     
