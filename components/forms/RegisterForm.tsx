@@ -23,27 +23,29 @@ export enum FormFieldType {
   SKELETON = "skeleton",
 }
 
-export const RegisterForm = ({user}:{user:User}) => {
+export const RegisterForm = ({ user }: { user: User }) => {
   console.log("register form");
   console.log(user);
-  
-  
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
 
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
       name: "",
-      email:"",
-      phone:""
+      email: "",
+      phone: "",
     },
   });
 
   // 2. Define a submit handler.
-  async function onSubmit({name, email, phone}: z.infer<typeof UserFormValidation>) {
+  async function onSubmit({
+    name,
+    email,
+    phone,
+  }: z.infer<typeof UserFormValidation>) {
     // setIsLoading(true);
     // try {
     //   const userData = { name, email, phone }
@@ -53,19 +55,19 @@ export const RegisterForm = ({user}:{user:User}) => {
     //       'Content-Type': 'application/json',
     //     },
     //     body: JSON.stringify(userData),
-    //   });      
-
+    //   });
     //   const { user } = await response.json()
     //   if(user) router.push('/patients/${usr.id}/register')
-      
     // } catch (error) {
     //   console.log('error in user onSubmit' , error);
-      
     // }
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-12">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex-1 space-y-12"
+      >
         <section className="mb-12 space-y-4">
           <h1 className="header text-white">Welcome 👋</h1>
           <p className="text-dark-700">Lets us Know more about yours self</p>
@@ -73,8 +75,7 @@ export const RegisterForm = ({user}:{user:User}) => {
 
         <section className="mb-12 space-y-6">
           <div className="mb-9 space-y-1">
-          <h2 className="text-white sub-header">Personal Information</h2>
-
+            <h2 className="text-white sub-header">Personal Information</h2>
           </div>
         </section>
 
@@ -88,8 +89,28 @@ export const RegisterForm = ({user}:{user:User}) => {
           iconAlt="user"
         />
 
-      <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
-        
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+            iconSrc="/assets/icons/email.svg"
+            iconAlt="email"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="phone"
+            label="Phone number"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
+        <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>
