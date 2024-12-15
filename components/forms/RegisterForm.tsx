@@ -5,13 +5,14 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
+import { Form, FormControl } from "@/components/ui/form";
 import CustomFormField from "./CustomFormField";
 import SubmitButton from "../common/SubmitButton";
 import { useState } from "react";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
+import { RadioGroup } from "../ui/radio-group";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -111,22 +112,34 @@ export const RegisterForm = ({ user }: { user: User }) => {
 
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
-            fieldType={FormFieldType.INPUT}
+            fieldType={FormFieldType.DATE_PICKER}
             control={form.control}
             name="birthDate"
-            label="Date of birt"
-            placeholder="johndoe@gmail.com"
-            iconSrc="/assets/icons/email.svg"
-            iconAlt="email"
+            label="Date of birth"
           />
 
-          <CustomFormField
-            fieldType={FormFieldType.PHONE_INPUT}
+        <CustomFormField
+            fieldType={FormFieldType.SKELETON}
             control={form.control}
-            name="phone"
-            label="Phone number"
-            placeholder="(555) 123-4567"
+            name="gender"
+            label="Gender"
+            renderSkeleton={(field)=>(
+              <FormControl>
+                <RadioGroup className="flex h-11 gap-4 xl:justify-between"
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                
+                >
+                
+
+                  
+                </RadioGroup>
+
+              </FormControl>
+            )}
           />
+
+          
         </div>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>

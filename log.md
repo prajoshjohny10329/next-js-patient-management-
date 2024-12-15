@@ -87,6 +87,10 @@
 
 15-12-2024  21:47pm
 
+    Create Register form
+        *Patient information
+         npx shadcn@latest add radio-group
+
     
     
         
