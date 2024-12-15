@@ -85,13 +85,19 @@
 
     01:27:54    before add actual form field     00:00am to 01:37 am
 
-15-12-2024  21:47pm
+15-12-2024
 
     Create Register form
         *Patient information
         *npx shadcn@latest add radio-group
         *add gender option constant file  /constant/index.ts
         *Add new switch case for DATE_PICKER and SKELTON 
+        http://localhost:3000/patients/675f01ac04c5e52326983cde/register
+        *Date picker dependencies problem
+
+    01:40:54    dependencies problem    21:47pm to 23:15pm
+
+
 
     
     

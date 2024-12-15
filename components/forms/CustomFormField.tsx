@@ -16,6 +16,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useState } from "react";
 import { E164Number } from 'libphonenumber-js';
+import DatePicker from "react-datepicker";
 
 
 interface CustomProps {
@@ -35,6 +36,7 @@ interface CustomProps {
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   const { fieldType, iconSrc, iconAlt, placeholder } = props;
+  const [startDate, setStartDate] = useState(new Date());
 
   switch (fieldType) {
     case FormFieldType.INPUT:
@@ -74,7 +76,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.DATE_PICKER:
       return(
-        <div className="flex rounded border bg-dark-500 border-dark-400">
+        <div className="flex rounded-md border bg-dark-500 border-dark-400">
           <Image
               src='/assets/icons/calendar.svg'
               height={24}
@@ -84,6 +86,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             />
           <FormControl>
           
+          <DatePicker selected={field.value} onChange={(date) => field.onChange(date) } />
           </FormControl>
         </div>
       )
