@@ -65,10 +65,17 @@ export const RegisterForm = ({user}:{user:User}) => {
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-12">
         <section className="mb-12 space-y-4">
-          <h1 className="header text-white">Hi there 👋</h1>
-          <p className="text-dark-700">Get started with appointments.</p>
+          <h1 className="header text-white">Welcome 👋</h1>
+          <p className="text-dark-700">Lets us Know more about yours self</p>
+        </section>
+
+        <section className="mb-12 space-y-6">
+          <div className="mb-9 space-y-1">
+          <h2 className="text-white sub-header">Personal Information</h2>
+
+          </div>
         </section>
 
         <CustomFormField
@@ -80,25 +87,6 @@ export const RegisterForm = ({user}:{user:User}) => {
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
-
-        <CustomFormField
-          fieldType={FormFieldType.INPUT}
-          control={form.control}
-          name="email"
-          label="Email"
-          placeholder="johndoe@gmail.com"
-          iconSrc="/assets/icons/email.svg"
-          iconAlt="email"
-        />
-
-        <CustomFormField
-          fieldType={FormFieldType.PHONE_INPUT}
-          control={form.control}
-          name="phone"
-          label="Phone number"
-          placeholder="(555) 123-4567"
-        />
-
 
       <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
         
