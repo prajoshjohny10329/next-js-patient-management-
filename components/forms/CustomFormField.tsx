@@ -17,7 +17,7 @@ import PhoneInput from "react-phone-number-input";
 import { useState } from "react";
 import { E164Number } from 'libphonenumber-js';
 import DatePicker from "react-datepicker";
-
+import "react-datepicker/dist/react-datepicker.css";
 
 interface CustomProps {
   control: Control<any>;
