@@ -35,7 +35,7 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
-  const { fieldType, iconSrc, iconAlt, placeholder } = props;
+  const { fieldType, iconSrc, iconAlt, placeholder, renderSkeleton } = props;
   const [startDate, setStartDate] = useState(new Date());
 
   switch (fieldType) {
@@ -76,7 +76,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.DATE_PICKER:
       return(
-        <div className="flex rounded-md border bg-dark-500 border-dark-400">
+        <div className="flex rounded-md border text-white bg-dark-500 border-dark-400">
           <Image
               src='/assets/icons/calendar.svg'
               height={24}
@@ -89,7 +89,10 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           <DatePicker selected={field.value} onChange={(date) => field.onChange(date) } />
           </FormControl>
         </div>
-      )
+      );
+    case FormFieldType.SKELETON:
+        return renderSkeleton ? renderSkeleton
+        (field) : null
 
     default:
       break;

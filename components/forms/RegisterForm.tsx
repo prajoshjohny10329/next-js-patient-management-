@@ -132,17 +132,13 @@ export const RegisterForm = ({ user }: { user: User }) => {
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
-                  {
-                    GenderOptions.map((option)=>(
-                      <div key={option} className="radio-group">
-                        <RadioGroupItem value={option} id={option}>
-                          <Label htmlFor={option} className="cursor-pointer">
-                            {option}
-                          </Label>
-                        </RadioGroupItem>
-                      </div>
-                    ))
-                  }
+                  {GenderOptions.map((option) => (
+                    
+                    <div key={option} className="radio-group">
+                      <RadioGroupItem value={option} id={option}></RadioGroupItem>
+                      <Label htmlFor={option} className="cursor-point">{option}</Label>
+                    </div>
+                  ))}
                 </RadioGroup>
               </FormControl>
             )}
