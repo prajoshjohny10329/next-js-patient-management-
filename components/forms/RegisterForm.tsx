@@ -17,6 +17,8 @@ import { Doctors, GenderOptions } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
+import { ThemeProvider } from "../theme-provider";
+import { ModeToggle } from "../ui/mode-toggle";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -84,6 +86,8 @@ export const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
+        <ModeToggle/>
+
         <CustomFormField
           fieldType={FormFieldType.INPUT}
           control={form.control}
@@ -93,6 +97,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
+        
 
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
@@ -215,6 +220,26 @@ export const RegisterForm = ({ user }: { user: User }) => {
             </SelectItem>
           ))}
         </CustomFormField>
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+          
+
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="insuranceProvider"
+            label="Insurance Provider"
+            placeholder="LIC, HDFC"
+          />
+          
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insurancePolicyNumber"
+            label="Insurance Policy Number" 
+            placeholder="ABC12345"
+          />
+        </div>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
