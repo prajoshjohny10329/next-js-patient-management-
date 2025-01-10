@@ -162,8 +162,6 @@ export const RegisterForm = ({ user }: { user: User }) => {
             name="address"
             label="Address"
             placeholder="14th Street"
-            iconSrc="/assets/icons/user.svg"
-            iconAlt="user"
           />
 
           <CustomFormField
