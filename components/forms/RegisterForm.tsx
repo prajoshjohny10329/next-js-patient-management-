@@ -191,6 +191,14 @@ export const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
+        <CustomFormField
+            fieldType={FormFieldType.SELECT}
+            control={form.control}
+            name="primaryPhysician"
+            label="Primary Physician"
+            placeholder="Select Physician"
+          />
+
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
         <Button type="submit">Submit</Button>
