@@ -177,18 +177,16 @@ export const RegisterForm = ({ user }: { user: User }) => {
         <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
-            name="email"
-            label="Email"
-            placeholder="johndoe@gmail.com"
-            iconSrc="/assets/icons/email.svg"
-            iconAlt="email"
+            name="emergencyContactName"
+            label="Emergency Contact Name"
+            placeholder="Guardian Name"
           />
 
           <CustomFormField
             fieldType={FormFieldType.PHONE_INPUT}
             control={form.control}
-            name="phone"
-            label="Phone number"
+            name="emergencyContactNumber"
+            label="Emergency Contact Number"
             placeholder="(555) 123-4567"
           />
         </div>
