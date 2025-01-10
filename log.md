@@ -103,7 +103,7 @@
         *solve date picker problem with add css file of date-picker
 
 10-01-2025
-    
+        *fix font issue by removing "var(--font-sans)" at tailwind config
 
 
 

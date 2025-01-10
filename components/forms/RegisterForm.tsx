@@ -133,15 +133,47 @@ export const RegisterForm = ({ user }: { user: User }) => {
                   defaultValue={field.value}
                 >
                   {GenderOptions.map((option) => (
-                    
                     <div key={option} className="radio-group">
-                      <RadioGroupItem value={option} id={option}></RadioGroupItem>
-                      <Label htmlFor={option} className="cursor-point">{option}</Label>
+                      <RadioGroupItem
+                        value={option}
+                        id={option}
+                      ></RadioGroupItem>
+                      <Label htmlFor={option} className="cursor-pointer">
+                        {option}
+                      </Label>
                     </div>
                   ))}
                 </RadioGroup>
               </FormControl>
             )}
+          />
+        </div>
+
+        {/* <section className="mb-12 space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="text-white sub-header">Medical Information</h2>
+          </div>
+        </section> */}
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="address"
+            label="Address"
+            placeholder="14th Street"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="user"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="name"
+            label="Full name"
+            placeholder="John Doe"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="user"
           />
         </div>
 
