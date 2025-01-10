@@ -222,7 +222,6 @@ export const RegisterForm = ({ user }: { user: User }) => {
         </CustomFormField>
 
         <div className="flex flex-col gap-6 xl:flex-row">
-          
 
           <CustomFormField
             fieldType={FormFieldType.PHONE_INPUT}
@@ -232,6 +231,23 @@ export const RegisterForm = ({ user }: { user: User }) => {
             placeholder="LIC, HDFC"
           />
           
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insurancePolicyNumber"
+            label="Insurance Policy Number" 
+            placeholder="ABC12345"
+          />
+        </div>
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="allergies"
+            label="Allergies (if any)"
+            placeholder="Allergies"
+          />
           <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
