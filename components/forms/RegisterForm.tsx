@@ -149,12 +149,6 @@ export const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
-        {/* <section className="mb-12 space-y-6">
-          <div className="mb-9 space-y-1">
-            <h2 className="text-white sub-header">Medical Information</h2>
-          </div>
-        </section> */}
-
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
             fieldType={FormFieldType.INPUT}
@@ -191,13 +185,11 @@ export const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
-        <div className="flex flex-col gap-6 xl:flex-row">
-          
-        </div>
-
-        <div className="flex flex-col gap-6 xl:flex-row">
-          
-        </div>
+        <section className="mb-12 space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="text-white sub-header">Medical Information</h2>
+          </div>
+        </section>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
