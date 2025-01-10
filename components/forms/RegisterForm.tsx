@@ -13,8 +13,10 @@ import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { GenderOptions } from "@/constants";
+import { Doctors, GenderOptions } from "@/constants";
 import { Label } from "../ui/label";
+import { SelectItem } from "../ui/select";
+import Image from "next/image";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -168,7 +170,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
         </div>
 
         <div className="flex flex-col gap-6 xl:flex-row">
-        <CustomFormField
+          <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
             name="emergencyContactName"
@@ -192,12 +194,27 @@ export const RegisterForm = ({ user }: { user: User }) => {
         </section>
 
         <CustomFormField
-            fieldType={FormFieldType.SELECT}
-            control={form.control}
-            name="primaryPhysician"
-            label="Primary Physician"
-            placeholder="Select Physician"
-          />
+          fieldType={FormFieldType.SELECT}
+          control={form.control}
+          name="primaryPhysician"
+          label="Primary Physician"
+          placeholder="Select Physician"
+        >
+          {Doctors.map((doctor) => (
+            <SelectItem key={doctor.name} value={doctor.name}>
+              <div className="flex cursor-pointer gap-2 items-center">
+                <Image
+                  src={doctor.image}
+                  height={32}
+                  width={32}
+                  alt={doctor.name}
+                  className="rounded-full border border-dark-500"
+                />
+              </div>
+              <p>{doctor.name}</p>
+            </SelectItem>
+          ))}
+        </CustomFormField>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
