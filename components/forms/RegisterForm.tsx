@@ -244,7 +244,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
-            name="allergies"
+            name="allergies" 
             label="Allergies (if any)"
             placeholder="Allergies"
           />

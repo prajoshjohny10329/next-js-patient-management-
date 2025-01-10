@@ -102,8 +102,11 @@
     Create Register form
         *solve date picker problem with add css file of date-picker
 
-10-01-2025
+10-01-2025 
         *fix font issue by removing "var(--font-sans)" at tailwind config
+        *add case FormFieldType for SELECT
+
+    01:40:54    next create TEXTAREA FormFieldType case   21:27pm to 23:28pm
 
 
 
