@@ -167,12 +167,38 @@ export const RegisterForm = ({ user }: { user: User }) => {
           <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
-            name="name"
-            label="Full name"
-            placeholder="John Doe"
-            iconSrc="/assets/icons/user.svg"
-            iconAlt="user"
+            name="occupation"
+            label="Occupation"
+            placeholder="Software Engineer"
           />
+        </div>
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+        <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+            iconSrc="/assets/icons/email.svg"
+            iconAlt="email"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="phone"
+            label="Phone number"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+          
+        </div>
+
+        <div className="flex flex-col gap-6 xl:flex-row">
+          
         </div>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
