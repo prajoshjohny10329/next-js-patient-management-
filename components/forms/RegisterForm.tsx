@@ -263,14 +263,14 @@ export const RegisterForm = ({ user }: { user: User }) => {
             control={form.control}
             name="familyMedicalHistory" 
             label="Family Medical History (if any)"
-            placeholder="Allergies"
+            placeholder="Mother had skin Allergies,..."
           />
           <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
-            name="currentMedication"
-            label="Current Medication (if any)" 
-            placeholder="paracetamol 500"
+            name="pastMedicalHistory"
+            label="Past Medical History (if any)" 
+            placeholder="Fever, Skin disease"
           />
         </div>
 
