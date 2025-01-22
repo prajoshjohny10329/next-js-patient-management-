@@ -198,6 +198,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
+        {/* Form Field for Primary Physician */}
         <CustomFormField
           fieldType={FormFieldType.SELECT}
           control={form.control}
@@ -279,6 +280,30 @@ export const RegisterForm = ({ user }: { user: User }) => {
             <h2 className="text-white sub-header">Identification & Verification</h2>
           </div>
         </section>
+
+        {/* SELECT Form Field for Identification Type */}
+        <CustomFormField
+          fieldType={FormFieldType.SELECT}
+          control={form.control}
+          name="identificationType"
+          label="IdentificationType"
+          placeholder="Select an identification Type"
+        >
+          {Doctors.map((doctor) => (
+            <SelectItem key={doctor.name} value={doctor.name}>
+              <div className="flex cursor-pointer gap-2 items-center">
+                <Image
+                  src={doctor.image}
+                  height={32}
+                  width={32}
+                  alt={doctor.name}
+                  className="rounded-full border border-dark-500"
+                />
+              </div>
+              <p>{doctor.name}</p>
+            </SelectItem>
+          ))}
+        </CustomFormField>
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
