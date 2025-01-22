@@ -302,13 +302,25 @@ export const RegisterForm = ({ user }: { user: User }) => {
           ))}
         </CustomFormField>
 
+        {/* INPUT Form Field for Identification Number */}
         <CustomFormField
-            fieldType={FormFieldType.INPUT}
-            control={form.control}
-            name="identificationNumber"
-            label="Identification Number"
-            placeholder="14564854535121"
-          />
+          fieldType={FormFieldType.INPUT}
+          control={form.control}
+          name="identificationNumber"
+          label="Identification Number"
+          placeholder="14564854535121"
+        />
+
+        <CustomFormField
+          fieldType={FormFieldType.SKELETON}
+          control={form.control}
+          name="identificationDocument"
+          label="Upload Your Identification Document"
+          renderSkeleton={(field) => (
+            <FormControl>
+            </FormControl>
+          )}
+        />
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
