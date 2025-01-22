@@ -109,7 +109,11 @@
     01:40:54    next create TEXTAREA FormFieldType case   21:27pm to 23:28pm
 
 22-01-2025
-    19:22   
+        *create TEXTAREA FormFieldType case
+        *create Custom Filed for FileUploader component     ./component/common/FileUploader
+
+    02.04.24    next install react-dropzone FileUploader     19:22pm to 21:18pm
+
 
 
 

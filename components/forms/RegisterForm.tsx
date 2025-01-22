@@ -319,7 +319,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           label="Upload Your Identification Document"
           renderSkeleton={(field) => (
             <FormControl>
-                <FIleUploader></FIleUploader>
+                <FIleUploader />
             </FormControl>
           )}
         />
