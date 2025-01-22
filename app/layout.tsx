@@ -29,11 +29,12 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-          {children}
+          {/* {children} */}
 
-        {/* <ThemeProvider attribute="class" defaultTheme="light"
+        <ThemeProvider attribute="class" defaultTheme="light"
         >
-        </ThemeProvider> */}
+         {children}
+        </ThemeProvider>
       </body>
     </html>
   );
