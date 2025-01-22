@@ -13,7 +13,12 @@ import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Doctors, GenderOptions, IdentificationType, IdentityType } from "@/constants";
+import {
+  Doctors,
+  GenderOptions,
+  IdentificationType,
+  IdentityType,
+} from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
@@ -86,7 +91,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
-        <ModeToggle/>
+        <ModeToggle />
 
         <CustomFormField
           fieldType={FormFieldType.INPUT}
@@ -97,7 +102,6 @@ export const RegisterForm = ({ user }: { user: User }) => {
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
-        
 
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
@@ -223,7 +227,6 @@ export const RegisterForm = ({ user }: { user: User }) => {
         </CustomFormField>
 
         <div className="flex flex-col gap-6 xl:flex-row">
-
           <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
@@ -231,12 +234,12 @@ export const RegisterForm = ({ user }: { user: User }) => {
             label="Insurance Provider"
             placeholder="LIC, HDFC"
           />
-          
+
           <CustomFormField
             fieldType={FormFieldType.INPUT}
             control={form.control}
             name="insurancePolicyNumber"
-            label="Insurance Policy Number" 
+            label="Insurance Policy Number"
             placeholder="ABC12345"
           />
         </div>
@@ -245,7 +248,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
-            name="allergies" 
+            name="allergies"
             label="Allergies (if any)"
             placeholder="Allergies"
           />
@@ -253,16 +256,17 @@ export const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
             name="currentMedication"
-            label="Current Medication (if any)" 
+            label="Current Medication (if any)"
             placeholder="paracetamol 500"
           />
         </div>
 
+        {/* TEXTAREA Form Field for familyMedicalHistory & pastMedicalHistory */}
         <div className="flex flex-col gap-6 xl:flex-row">
           <CustomFormField
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
-            name="familyMedicalHistory" 
+            name="familyMedicalHistory"
             label="Family Medical History (if any)"
             placeholder="Mother had skin Allergies,..."
           />
@@ -270,14 +274,16 @@ export const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
             name="pastMedicalHistory"
-            label="Past Medical History (if any)" 
+            label="Past Medical History (if any)"
             placeholder="Fever, Skin disease"
           />
         </div>
 
         <section className="mb-12 space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="text-white sub-header">Identification & Verification</h2>
+            <h2 className="text-white sub-header">
+              Identification & Verification
+            </h2>
           </div>
         </section>
 
@@ -295,6 +301,14 @@ export const RegisterForm = ({ user }: { user: User }) => {
             </SelectItem>
           ))}
         </CustomFormField>
+
+        <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="identificationNumber"
+            label="Identification Number"
+            placeholder="14564854535121"
+          />
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
