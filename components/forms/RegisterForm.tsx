@@ -17,7 +17,6 @@ import {
   Doctors,
   GenderOptions,
   IdentificationType,
-  IdentityType,
 } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
