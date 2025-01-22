@@ -13,7 +13,7 @@ import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Doctors, GenderOptions } from "@/constants";
+import { Doctors, GenderOptions, IdentificationType, IdentityType } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
@@ -289,18 +289,9 @@ export const RegisterForm = ({ user }: { user: User }) => {
           label="IdentificationType"
           placeholder="Select an identification Type"
         >
-          {Doctors.map((doctor) => (
-            <SelectItem key={doctor.name} value={doctor.name}>
-              <div className="flex cursor-pointer gap-2 items-center">
-                <Image
-                  src={doctor.image}
-                  height={32}
-                  width={32}
-                  alt={doctor.name}
-                  className="rounded-full border border-dark-500"
-                />
-              </div>
-              <p>{doctor.name}</p>
+          {IdentificationType.map((type) => (
+            <SelectItem key={type} value={type}>
+              {type}
             </SelectItem>
           ))}
         </CustomFormField>

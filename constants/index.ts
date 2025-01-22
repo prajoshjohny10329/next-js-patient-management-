@@ -39,23 +39,11 @@ export const Doctors = [
   },
 ];
 
-export const IdentityType = [
-  {
-    type: "Birth Certificate"
-  },
-  {
-    type: "Driver's License"
-  },
-  {
-    type: "Medical Insurance Card/Policy"
-  },
-  {
-    type: "Military Id Card"
-  },
-  {
-    type: "Identity Card"
-  },
-  {
-    type: "Passport"
-  },
+export const IdentificationType = [
+  "Birth Certificate",
+  "Driver's License",
+  "Medical Insurance Card/Policy",
+  "Military Id Card",
+  "Identity Card",
+  "Passport ID"
 ];
