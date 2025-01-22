@@ -274,6 +274,12 @@ export const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
+        <section className="mb-12 space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="text-white sub-header">Identification & Verification</h2>
+          </div>
+        </section>
+
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
         <Button type="submit">Submit</Button>
