@@ -104,11 +104,17 @@ export const RegisterForm = ({ user }: { user: User }) => {
       //   birthDate: new Date(values.birthDate),
       //   identificationDocument: formData,
       // }
-      console.log("patientData");
-      console.log(patientData);
+
+      const response = await fetch(process.env.NEXT_PUBLIC_API+"patient", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(patientData),
+      });
 
       //@ts-ignore
-      const patient = await registerPatient(patientData);
+      // const patient = await registerPatient(patientData);
 
       // if(patient) router.push(`/patient/${patient.$id}/dashboard`)
     } catch (error) {}

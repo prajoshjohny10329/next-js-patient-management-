@@ -15,8 +15,6 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-    console.log('normal route');
-
     try {
         const { name, email, phone } = await req.json();
 
