@@ -318,7 +318,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           label="Upload Your Identification Document"
           renderSkeleton={(field) => (
             <FormControl>
-              <FileUploader />
+              <FileUploader files={field.value} onChange={field.onChange} />
             </FormControl>
           )}
         />
