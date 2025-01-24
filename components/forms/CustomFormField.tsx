@@ -49,7 +49,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   switch (fieldType) {
     case FormFieldType.INPUT:
       return (
-        <div className="flex round-md border border-dark-500 bg-dark-400 ">
+        <div className="flex rounded-md border border-dark-500 bg-dark-400 ">
           {iconSrc && (
             <Image
               src={iconSrc}
@@ -84,7 +84,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.DATE_PICKER:
       return (
-        <div className="flex rounded-md border text-white bg-dark-500 border-dark-400">
+        <div className="flex rounded-md border border-dark-500 bg-dark-400 input-phone">
           <Image
             src="/assets/icons/calendar.svg"
             height={24}
@@ -92,7 +92,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             alt="Calender"
             className="ml-2"
           />
-          <FormControl>
+          <FormControl >
             <DatePicker
               selected={field.value}
               onChange={(date) => field.onChange(date)}
@@ -134,7 +134,6 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             id={props.name}
             checked={field.value}
             onCheckedChange={field.onChange}
-            className="bg-green-500"
           />
           <label htmlFor={props.label} className="checkbox-label">
             {props.label}
