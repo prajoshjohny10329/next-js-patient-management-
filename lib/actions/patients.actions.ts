@@ -36,10 +36,8 @@ export const createUser = async (user: CreateUserParams) => {
 export const registerPatient = async ({ identificationDocument, ...patient}: RegisterUserParams) =>{
   try {
     console.log('call stack');
-    
+    console.log(patient);
     console.log(identificationDocument);
-    
-    
   } catch (error) {
     console.log(error + '\n in server registerPatient');
     

@@ -114,10 +114,11 @@
 
     02.04.24    next install react-dropzone FileUploader     19:22pm to 21:18pm
 
-24-01-2025  18:24
+24-01-2025
         *install react-dropzone FileUploader
         *using URL.createObject for save image file path
         *using Blob 
+        
     02.24.00    next store register data to database and cloudinary     18:24   22:08
 
 

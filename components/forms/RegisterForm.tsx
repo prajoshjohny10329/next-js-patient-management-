@@ -9,7 +9,7 @@ import { Form, FormControl } from "@/components/ui/form";
 import CustomFormField from "./CustomFormField";
 import SubmitButton from "../common/SubmitButton";
 import { useState } from "react";
-import { PatientFormValidation} from "@/lib/validation";
+import { PatientFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser, registerPatient } from "@/lib/actions/patients.actions";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
@@ -54,39 +54,65 @@ export const RegisterForm = ({ user }: { user: User }) => {
   
 
   // 2. Define a submit handler.
-    const onSubmit = async (values : z.infer<typeof PatientFormValidation>) => {
-    setIsLoading(true)
-    console.log("onsubmit");
-    
-    let formData
+  const onSubmit = async (values: z.infer<typeof PatientFormValidation>) => {
+    setIsLoading(true);
+    let formData;
 
-    if(values.identificationDocument && values.identificationDocument.length > 0){
+    if (
+      values.identificationDocument &&
+      values.identificationDocument.length > 0
+    ) {
       const blobFile = new Blob([values.identificationDocument[0]], {
-        type:values.identificationDocument[0].type,
+        type: values.identificationDocument[0].type,
       });
 
-      formData = new FormData()
-      formData.append('blobFile', blobFile)
-      formData.append('fileName', values.identificationDocument[0].name)
+      formData = new FormData();
+      formData.append("blobFile", blobFile);
+      formData.append("fileName", values.identificationDocument[0].name);
     }
+    console.log("before value");
+    console.log(values);
+    
 
     try {
-      const patientData ={
-        ...values,
-        userId: user.$id,
+      const patientData = {
+        userId: user._id, // Explicitly set
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        gender: values.gender,
+        allergies: values.allergies || undefined,
+        currentMedication: values.currentMedication || undefined,
+        familyMedicalHistory: values.familyMedicalHistory || undefined,
+        pastMedicalHistory: values.pastMedicalHistory || undefined,
+        identificationType: values.identificationType,
+        identificationNumber: values.identificationNumber,
         birthDate: new Date(values.birthDate),
-        identificationDocument: formData,
-      }
+        identificationDocument: formData || undefined, 
+        address: values.address,
+        occupation: values.occupation,
+        emergencyContactName: values.emergencyContactName,
+        emergencyContactNumber: values.emergencyContactNumber,
+        primaryPhysician: values.primaryPhysician,
+        insuranceProvider: values.insuranceProvider,
+        insurancePolicyNumber: values.insurancePolicyNumber,
+      };
+      // const patientData ={
+      //   ...values,
+      //   //@ts-ignore
+      //   userId: user._id,
+      //   birthDate: new Date(values.birthDate),
+      //   identificationDocument: formData,
+      // }
+      console.log("patientData");
+      console.log(patientData);
 
-      const patient = await registerPatient(patientData)
+      //@ts-ignore
+      const patient = await registerPatient(patientData);
 
       // if(patient) router.push(`/patient/${patient.$id}/dashboard`)
-    } catch (error) {
-      
-    }
+    } catch (error) {}
 
-
-    
     // setIsLoading(true);
     // try {
     //   const userData = { name, email, phone }
@@ -102,7 +128,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
     // } catch (error) {
     //   console.log('error in user onSubmit' , error);
     // }
-  }
+  };
   return (
     <Form {...form}>
       <form
@@ -354,32 +380,30 @@ export const RegisterForm = ({ user }: { user: User }) => {
 
         <section className="mb-12 space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="text-white sub-header">
-              Consent and Privacy
-            </h2>
+            <h2 className="text-white sub-header">Consent and Privacy</h2>
           </div>
         </section>
 
         <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="treatmentConsent"
-            label=" I Consent to Treatment"
-          />
+          fieldType={FormFieldType.CHECKBOX}
+          control={form.control}
+          name="treatmentConsent"
+          label=" I Consent to Treatment"
+        />
 
         <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="disclosureConsent"
-            label=" I Consent to Disclosure Information"
-          />
+          fieldType={FormFieldType.CHECKBOX}
+          control={form.control}
+          name="disclosureConsent"
+          label=" I Consent to Disclosure Information"
+        />
 
         <CustomFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name="privacyConsent"
-            label=" I Consent to Privacy Policy"
-          />
+          fieldType={FormFieldType.CHECKBOX}
+          control={form.control}
+          name="privacyConsent"
+          label=" I Consent to Privacy Policy"
+        />
 
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
