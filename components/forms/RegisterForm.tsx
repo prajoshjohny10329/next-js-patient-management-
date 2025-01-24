@@ -9,7 +9,7 @@ import { Form, FormControl } from "@/components/ui/form";
 import CustomFormField from "./CustomFormField";
 import SubmitButton from "../common/SubmitButton";
 import { useState } from "react";
-import { UserFormValidation } from "@/lib/validation";
+import { PatientFormValidation} from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patients.actions";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
@@ -17,6 +17,7 @@ import {
   Doctors,
   GenderOptions,
   IdentificationType,
+  PatientFormDefaultValues,
 } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
@@ -43,9 +44,10 @@ export const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
 
   // 1. Define your form.
-  const form = useForm<z.infer<typeof UserFormValidation>>({
-    resolver: zodResolver(UserFormValidation),
+  const form = useForm<z.infer<typeof PatientFormValidation>>({
+    resolver: zodResolver(PatientFormValidation),
     defaultValues: {
+      ...PatientFormDefaultValues,
       name: "",
       email: "",
       phone: "",
@@ -57,7 +59,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
     name,
     email,
     phone,
-  }: z.infer<typeof UserFormValidation>) {
+  }: z.infer<typeof PatientFormValidation>) {
     // setIsLoading(true);
     // try {
     //   const userData = { name, email, phone }

@@ -26,14 +26,9 @@ const Registration = async ({params}: SearchParamProps) => {
 
           <RegisterForm user={user} />
 
-          <div className="text-sm flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
               © 2024 Patient
             </p>
-            <Link href={"/?admin=true"} className="text-green-500">
-              Admin
-            </Link>
-          </div>
         </div>
       </section>
 
