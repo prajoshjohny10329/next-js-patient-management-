@@ -129,14 +129,17 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
     case FormFieldType.CHECKBOX:
       return (
         <FormControl>
+          <div className="flex items-center">
           <Checkbox
             id={props.name}
             checked={field.value}
             onCheckedChange={field.onChange}
+            className="bg-green-500"
           />
-          <label htmlFor={props.name} className="checkbox-label">
+          <label htmlFor={props.label} className="checkbox-label">
             {props.label}
           </label>
+          </div>
         </FormControl>
       );
     case FormFieldType.SKELETON:

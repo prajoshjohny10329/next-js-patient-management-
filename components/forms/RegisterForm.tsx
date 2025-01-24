@@ -331,6 +331,27 @@ export const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control={form.control}
+            name="treatmentConsent"
+            label=" I Consent to Treatment"
+          />
+
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control={form.control}
+            name="disclosureConsent"
+            label=" I Consent to Disclosure Information"
+          />
+
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control={form.control}
+            name="privacyConsent"
+            label=" I Consent to Privacy Policy"
+          />
+
         <SubmitButton isLoading={isLoading}>Get Start</SubmitButton>
 
         <Button type="submit">Submit</Button>
