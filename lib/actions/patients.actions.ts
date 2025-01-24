@@ -33,6 +33,12 @@ export const createUser = async (user: CreateUserParams) => {
     }
   };
 
-export const registerPatient = async ({IdentificationDocument, ...patient}: RegisterUserparams) =>{
+export const registerPatient = async ({ identificationDocument, ...patient}: RegisterUserParams) =>{
+  try {
+    
+  } catch (error) {
+    console.log(error + '\n in server registerPatient');
+    
+  }
   
 }

@@ -51,18 +51,16 @@ export const RegisterForm = ({ user }: { user: User }) => {
       phone: user.phone,
     },
   });
+  
 
   // 2. Define a submit handler.
     const onSubmit = async (values : z.infer<typeof PatientFormValidation>) => {
     setIsLoading(true)
     console.log("onsubmit");
-    console.log(values);
     
     let formData
 
     if(values.identificationDocument && values.identificationDocument.length > 0){
-      console.log('get ident');
-      
       const blobFile = new Blob([values.identificationDocument[0]], {
         type:values.identificationDocument[0].type,
       });
