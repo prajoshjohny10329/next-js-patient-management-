@@ -14,9 +14,9 @@ export const  FileUploader = ({files, onChange}: FileUploader ) => {
   }, [])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
-  function convertFileToUrl(arg0: File): string | import("next/dist/shared/lib/get-img-props").StaticImport {
-    throw new Error('Function not implemented.')
-  }
+  const convertFileToUrl = (file: File): string => {
+    return URL.createObjectURL(file);
+  };
 
   return (
     <div {...getRootProps()} className='file-upload'>
