@@ -23,7 +23,7 @@ import { SelectItem } from "../ui/select";
 import Image from "next/image";
 import { ThemeProvider } from "../theme-provider";
 import { ModeToggle } from "../ui/mode-toggle";
-import FIleUploader from "../common/FIleUploader";
+import { FileUploader } from "../common/FileUploader";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -318,7 +318,7 @@ export const RegisterForm = ({ user }: { user: User }) => {
           label="Upload Your Identification Document"
           renderSkeleton={(field) => (
             <FormControl>
-                <FIleUploader />
+              <FileUploader />
             </FormControl>
           )}
         />
